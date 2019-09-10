@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Password Generator</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> 
+    <!--SweetAlerts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Random Password Generator</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-8 col-sm-12 mx-auto">
+
+                <div class="content">
+                    <h4>Password Generator</h4>
+                    <br />
+                    <input type="text" id="display">
+                    <br />
+                    <input type="range" min="0" max="30" name="slider" id="slider">
+                    <br />
+                    <button class="btn btn-primary btn-sm" onclick="generate()">Generate</button>
+                    <button class="btn btn-primary btn-sm" onclick="copyPassword()">Copy to Clipboard</button>
+                    <button class="btn btn-secondary btn-sm" onclick="prepareEmail()">Email Password</button>
+                    <div id="length"></div>
+                </div>
+
+                <div class="previous_passwords">
+                    <b>Previously Generated Passwords</b>
+                    <button class="btn btn-outline-danger btn-sm" onclick="clearPassword()">Clear</button>
+                    <br />
+                    <div id="lastNums"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/scripts/scripts.js"></script>
+</body>
+</html>
