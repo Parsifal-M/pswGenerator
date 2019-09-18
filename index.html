@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Password Generator</title>
+    <!--Favicon-->
+    <link rel='icon' href='' type='image/x-icon'/ >
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> 
     <!--SweetAlerts-->
@@ -19,9 +21,24 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Random Password Generator</a>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand abs" href="#">Random Password Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">   
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Pbodeh" target="_blank">Github</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mailto:test@test.com">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+    <!--Navbar-->
 
     <div class="container">
 
@@ -40,6 +57,8 @@
                     <button class="btn btn-primary btn-sm" onclick="copyPassword()">Copy to Clipboard</button>
                     <button class="btn btn-secondary btn-sm" onclick="prepareEmail()">Email Password</button>
                     <div id="length"></div>
+                    <div class="badge badge-success" id="strengthStrong"></div>
+                    <div class="badge badge-danger" id="strengthWeak"></div>
                 </div>
 
                 <div class="previous_passwords">
