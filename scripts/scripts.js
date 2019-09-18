@@ -73,7 +73,7 @@ function prepareEmail(toEmail, emailSubject, bodyText, ePass) {
     var toEmail = "abc@abc.com";
     var emailSubject = "Your Randomly Generated Password";
     var ePass = document.getElementById("display").value
-    var bodyText = "Hello!" + "%0A%0A Here is your Password:%20" + ePass;
+    var bodyText = "Hello!" + '\r\n\r\n' + "Here is your Password:" + ' ' + ePass;
 
 	//Set the form attributes 
 	form.setAttribute('method', 'post');
