@@ -35,3 +35,9 @@ a:link {
     outline:none;
     box-shadow:none;
 }
+
+#strength {
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+}

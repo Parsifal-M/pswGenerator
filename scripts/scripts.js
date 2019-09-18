@@ -1,31 +1,45 @@
-//generate random password
+//Generate random password
 function generate(){
 
-    //set password length/complexity
+    //Set password length/complexity
     let complexity = document.getElementById("slider").value;
 
-    //possible password values
-    let values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+    //Password values
+    let values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+=-";
 
     let password = "";
 
-    //create for loop to choose password characters
+    //Create for loop to choose password characters
     for(var i = 0; i <= complexity; i++){
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
     }
 
-    //add password to textbox/display area
+    //Add password to textbox/display area
     document.getElementById("display").value = password;
 
-    //add password to previously generated passwords section
+    //Add password to previously generated passwords section
     document.getElementById("lastNums").innerHTML += password + "<br />";
 
 }
 
-//set default length display of 15
+//Set default length display of 15
 document.getElementById("length").innerHTML = "Length: 15";
 
-//function to set length based on slider position
+//Set password strength notifier based on slider length
+var rangeSlider = document.getElementById("slider");
+
+rangeSlider.addEventListener('mouseup', function() {
+    if (this.value >= 8) {
+        document.getElementById("strengthStrong").innerHTML = "Strong"
+    } else (document.getElementById("strengthStrong").innerHTML = "")
+    //Weak Password
+    if (this.value < 8) {
+        document.getElementById("strengthWeak").innerHTML = "Weak"
+    } else (document.getElementById("strengthWeak").innerHTML = "")
+});
+
+
+//Set length based on slider position
 document.getElementById("slider").oninput = function(){
 
     if(document.getElementById("slider").value > 0){
@@ -59,12 +73,12 @@ function prepareEmail(toEmail, emailSubject, bodyText, ePass) {
     var toEmail = "abc@abc.com";
     var emailSubject = "Your Randomly Generated Password";
     var ePass = document.getElementById("display").value
-    var bodyText = "Hello! \n\nYour Password is: " + ePass + "\n\nHave a nice day!";
+    var bodyText = "Hello!" + "%0A%0A Here is your Password:%20" + ePass;
 
 	//Set the form attributes 
 	form.setAttribute('method', 'post');
 	form.setAttribute('enctype', 'text/plain');
-	form.setAttribute('action', 'mailto:' + escape(toEmail) + '?Subject=' + escape(emailSubject) + '&Body=' + escape(bodyText ? bodyText : ' '));
+	form.setAttribute('action', 'mailto:' + escape(toEmail) + '?subject=' + escape(emailSubject) + '&body=' + escape(bodyText ? bodyText : ' '));
 	form.setAttribute('style', 'display:none');
 	
 	//Append the form to the body
