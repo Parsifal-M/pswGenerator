@@ -7,6 +7,9 @@
     "authors":[{
         "name": "Peter Mac",
         "email": "macdonald.peter90@gmail.com"
-    }]
-
+    }],
+    
+    "require": {
+        "predis/predis": "1.0.3",
+    }
 }
